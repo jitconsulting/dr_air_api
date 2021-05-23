@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>空調設備APIドキュメント | igs-enudge-server_air_conditioning_API</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="空調設備APIドキュメント">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/">
+<meta property="og:url" content="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/">
+<meta property="og:site_name" content="igs-enudge-server_air_conditioning_API">
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/","name":"igs-enudge-server_air_conditioning_API","headline":"空調設備APIドキュメント","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <style class="anchorjs"></style><link rel="stylesheet" href="./index_files/style.css">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/">igs-enudge-server_air_conditioning_API</a></h1>
+      
+
+      <h1 id="空調設備apiドキュメント">空調設備APIドキュメント</h1>
+
+<h2 id="概要">概要<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#%E6%A6%82%E8%A6%81" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>こちらはエナッジ空調設備制御APIのドキュメントになります。<br>
+お渡しするものは以下になります。</p>
+
+<ol>
+  <li><a href="https://docs.google.com/spreadsheets/d/1BuxZKQ3K1r1lb4M8DmjLNcQo5c9b1T5HMI2fUsUiXdo/edit#gid=474512501">API一覧(スプレッドシート)</a></li>
+  <li><a href="https://cacoo.com/diagrams/BCLVnIpIZkjTnIjM/FE915">概念図(Cacoo)</a></li>
+  <li>仕様書（本ドキュメント）</li>
+</ol>
+
+<hr>
+
+<h1 id="api仕様書">API仕様書</h1>
+<h2 id="1制御レベル変更apipost">1.制御レベル変更API(POST)<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#1%E5%88%B6%E5%BE%A1%E3%83%AC%E3%83%99%E3%83%AB%E5%A4%89%E6%9B%B4apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<h3 id="url">URL<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#url" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>POST /v1/change_control_level</p>
+
+<h3 id="request">REQUEST<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#request" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"occurrence_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30 00:30:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0002"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0003"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response">RESPONSE<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#response" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h4 id="ok">OK<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#ok" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0002"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、制御レベルが変更できませんでした。"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0003"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、制御レベルが変更できませんでした。"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"リクエストタイムアウトのため、制御レベルが変更できませんでした。"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="air_conditioning_levelの値">air_conditioning_levelの値<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#air_conditioning_level%E3%81%AE%E5%80%A4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>off（空調制御を行わない）</td>
+    </tr>
+    <tr>
+      <td>1~30</td>
+      <td>弱</td>
+    </tr>
+    <tr>
+      <td>31~60</td>
+      <td>中</td>
+    </tr>
+    <tr>
+      <td>61~99</td>
+      <td>強</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="is_changeの値">is_changeの値<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#is_change%E3%81%AE%E5%80%A4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>変更なし</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>変更あり</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2電力使用量予測受信apipost">2.電力使用量予測受信API(POST)<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#2%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<h3 id="url-1">URL<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#url-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>POST /v1/receive_electric_consumption_prediction</p>
+
+<h3 id="request-1">REQUEST<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#request-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"occurrence_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30 00:30:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contract_power"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"demand_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"2018-11-30 00:00:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contract_power"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"demand_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"2018-11-30 00:00:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contract_power"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"demand_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"2018-11-30 00:00:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response-1">RESPONSE<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#response-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h4 id="ok-1">OK<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#ok-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">521</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、電力使用量予測が受信できませんでした。"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">521</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"リクエストタイムアウトのため、電力使用量予測が受信できませんでした。"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="excess_statusの値">excess_statusの値<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#excess_status%E3%81%AE%E5%80%A4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>超過なし</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>超過あり</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ai予測とai動的修正予測について">AI予測とAI動的修正予測について<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#ai%E4%BA%88%E6%B8%AC%E3%81%A8ai%E5%8B%95%E7%9A%84%E4%BF%AE%E6%AD%A3%E4%BA%88%E6%B8%AC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+<p>|プロパティ|意味|
+|—|—|
+|power_consumption_amount_prediction|AI予測|
+|power_consumption_amount_latest_prediction|AI動的修正予測|</p>
+
+<ul>
+  <li>AI予測は前日の23時ごろに作成される値であり、当日中に値が変更されることはありません</li>
+  <li>AI動的修正予測は当日の実測値により30分毎に変更される値になります</li>
+</ul>
+
+<h2 id="3電力使用量最新予測受信apipost">3.電力使用量最新予測受信API(POST)<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#3%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E6%9C%80%E6%96%B0%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<ul>
+  <li>2のAPIと共通化したため、こちらのAPIはなくなりました</li>
+</ul>
+
+<h2 id="4各系統の状態取得apiget">4.各系統の状態取得API(GET)<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#4%E5%90%84%E7%B3%BB%E7%B5%B1%E3%81%AE%E7%8A%B6%E6%85%8B%E5%8F%96%E5%BE%97apiget" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<h3 id="url-2">URL<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#url-2" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>GET /v1/control_level/{store_id}</p>
+
+<h3 id="response-2">RESPONSE<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#response-2" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h4 id="ok-2">OK<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#ok-2" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0004"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="error">ERROR<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#error" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "store_id": "ST0004",
+    "status_code": 540,
+    "message": "内部処理エラーのため、制御レベルが取得できませんでした。"
+}
+</code></pre></div></div>
+<p>or</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "store_id": "ST0004",
+    "status_code": 540,
+    "message": "リクエストタイムアウトのため、制御レベルが取得できませんでした。"
+}
+</code></pre></div></div>
+
+<h4 id="air_conditioning_levelの値-1">air_conditioning_levelの値<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#air_conditioning_level%E3%81%AE%E5%80%A4-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>off</td>
+    </tr>
+    <tr>
+      <td>1~30</td>
+      <td>弱</td>
+    </tr>
+    <tr>
+      <td>31~60</td>
+      <td>中</td>
+    </tr>
+    <tr>
+      <td>61~99</td>
+      <td>強</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="5想定制御削減量の取得apipost">5.想定制御削減量の取得API(POST)<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#5%E6%83%B3%E5%AE%9A%E5%88%B6%E5%BE%A1%E5%89%8A%E6%B8%9B%E9%87%8F%E3%81%AE%E5%8F%96%E5%BE%97apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<h3 id="url-3">URL<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#url-3" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>POST /v1/reduction_quantity</p>
+
+<h3 id="request-2">REQUEST<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#request-2" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"occurrence_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30 00:30:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"target_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response-3">RESPONSE<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#response-3" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h4 id="ok-3">OK<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#ok-3" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"リクエストタイムアウトのため、想定制御削減量が取得できませんでした。"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">551</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、想定制御削減量が取得できませんでした。"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"リクエストタイムアウトのため、想定制御削減量が取得できませんでした。"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:00:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"2019-03-08 00:30:00"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"48コマ分の削減量が返却されます"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="target_date-日付パラメータについて"><code class="language-plaintext highlighter-rouge">target_date</code> （日付パラメータ）について<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#target_date-%E6%97%A5%E4%BB%98%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">target_date</code> は任意の日付を指定可能です</li>
+  <li><code class="language-plaintext highlighter-rouge">target_date</code> が指定されなかった場合、API実行日時から直近の24時間分の削減量を返却します
+    <ul>
+      <li>例：20:15分にAPIを呼び出した場合</li>
+      <li>前日の <code class="language-plaintext highlighter-rouge">19:30</code> から 当日の <code class="language-plaintext highlighter-rouge">19:00</code>までの48コマ分の削減量を返却します</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">target_date</code> が指定された場合は、その日の0〜24時のデータを返却する
+    <ul>
+      <li>例：<code class="language-plaintext highlighter-rouge">2018-11-30</code> を指定した場合</li>
+      <li><code class="language-plaintext highlighter-rouge">2018-11-30</code> の <code class="language-plaintext highlighter-rouge">0:00</code> から <code class="language-plaintext highlighter-rouge">23:30</code> の削減量を返却する</li>
+    </ul>
+  </li>
+  <li>返却するデータに未来の日時を含む場合、削減量はnullで返します</li>
+  <li>削減量が 0 の場合のみ 0 で返します</li>
+</ul>
+
+<h2 id="error各api共通">ERROR（各API共通）<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#error%E5%90%84api%E5%85%B1%E9%80%9A" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SignatureKeyが不正のため、受け取れません"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">error_code</code> はサーバー実装企業様に規程して頂く予定です。</li>
+  <li>クライアント側に返答する <code class="language-plaintext highlighter-rouge">error_code</code> と <code class="language-plaintext highlighter-rouge">message</code> の一覧を共有ください。</li>
+  <li>クライアント側では返答されたエラー内容はログに記録します</li>
+</ul>
+
+<h2 id="店舗id端末id系統idを規程する主体について">店舗id・端末id・系統idを規程する主体について<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#%E5%BA%97%E8%88%97id%E7%AB%AF%E6%9C%ABid%E7%B3%BB%E7%B5%B1id%E3%82%92%E8%A6%8F%E7%A8%8B%E3%81%99%E3%82%8B%E4%B8%BB%E4%BD%93%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>各種idを決定する企業についてまとめています。<br>
+<strong>端末idと系統idは何らかの形でアルサーガ側へ共有して頂く必要があります。</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>json attribute</th>
+      <th>決定会社</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>店舗id</td>
+      <td>store_id</td>
+      <td>igs社・Arsaga社</td>
+    </tr>
+    <tr>
+      <td>端末id</td>
+      <td>device_id</td>
+      <td>igs社・JIT社</td>
+    </tr>
+    <tr>
+      <td>系統id</td>
+      <td>area_id</td>
+      <td>igs社・JIT社</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="空調メーカid-server_company_id-について">空調メーカID (server_company_id) について<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#%E7%A9%BA%E8%AA%BF%E3%83%A1%E3%83%BC%E3%82%ABid-server_company_id-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>空調制御サービスを提供する企業を特定するIDになります。<br>
+値は以下で決め打ちです。将来的な拡張のため指定しています。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>値</th>
+      <th>企業</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>JIT</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>アレフネット</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="セキュリティについて">セキュリティについて<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<p>すべてのAPIはSSL通信+Basic認証で行います。</p>
+
+<h2 id="20190320の会議での変更点について">2019/03/20の会議での変更点について<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#20190320%E3%81%AE%E4%BC%9A%E8%AD%B0%E3%81%A7%E3%81%AE%E5%A4%89%E6%9B%B4%E7%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<h3 id="2と3は同じapiにする">2と3は同じapiにする<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#2%E3%81%A83%E3%81%AF%E5%90%8C%E3%81%98api%E3%81%AB%E3%81%99%E3%82%8B" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>2.電力使用量予測受信APIと3.電力使用量最新予測受信APIについてですが、送信するデータの構造がほぼ同一のため、こちらは同じAPIとしてまとめることにしました。</p>
+
+<h3 id="電力使用量予測受信apiのデータ構造を大幅に変更">電力使用量予測受信APIのデータ構造を大幅に変更<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1api%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E5%A4%89%E6%9B%B4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<ul>
+  <li>上記に伴いAPIの仕様を大幅に変更しております。</li>
+</ul>
+
+<h3 id="5想定制御削減量の取得apiをpostメソッドに変更">5.想定制御削減量の取得APIをPOSTメソッドに変更<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#5%E6%83%B3%E5%AE%9A%E5%88%B6%E5%BE%A1%E5%89%8A%E6%B8%9B%E9%87%8F%E3%81%AE%E5%8F%96%E5%BE%97api%E3%82%92post%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<ul>
+  <li>複数店舗を取得できるようにする都合上、GETからPOSTに変更</li>
+</ul>
+
+<h3 id="signature">signature<a class="anchorjs-link " href="https://arsaga-partners.github.io/igs-enudge-server_air_conditioning_API/#signature" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>ssl/basic認証を採用する為、sigantureを削除しました。</p>
+
+
+      
+    </div>
+    <script src="./index_files/anchor.min.js.下载" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  
+
+</body></html>
