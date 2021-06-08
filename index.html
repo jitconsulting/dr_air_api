@@ -126,25 +126,14 @@
   <tbody>
     <tr>
       <td>0</td>
-      <td>超過なし</td>
+      <td>DR信号なし</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>超過あり</td>
+      <td>DR信号あり</td>
     </tr>
   </tbody>
 </table>
-
-<h4 id="ai予測とai動的修正予測について">AI予測とAI動的修正予測について<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#ai%E4%BA%88%E6%B8%AC%E3%81%A8ai%E5%8B%95%E7%9A%84%E4%BF%AE%E6%AD%A3%E4%BA%88%E6%B8%AC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
-<p>|プロパティ|意味|
-|—|—|
-|power_consumption_amount_prediction|AI予測|
-|power_consumption_amount_latest_prediction|AI動的修正予測|</p>
-
-<ul>
-  <li>AI予測は前日の23時ごろに作成される値であり、当日中に値が変更されることはありません</li>
-  <li>AI動的修正予測は当日の実測値により30分毎に変更される値になります</li>
-</ul>
 
 <h2 id="2想定制御削減量の取得apipost">2.想定制御削減量の取得API(POST)<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#5%E6%83%B3%E5%AE%9A%E5%88%B6%E5%BE%A1%E5%89%8A%E6%B8%9B%E9%87%8F%E3%81%AE%E5%8F%96%E5%BE%97apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
 
@@ -340,17 +329,17 @@
     <tr>
       <td>店舗id</td>
       <td>store_id</td>
-      <td>igs社・Arsaga社</td>
+      <td>igs社</td>
     </tr>
     <tr>
       <td>端末id</td>
       <td>device_id</td>
-      <td>igs社・JIT社</td>
+      <td>igs社・JITC社</td>
     </tr>
     <tr>
       <td>系統id</td>
       <td>area_id</td>
-      <td>igs社・JIT社</td>
+      <td>igs社・JITC社</td>
     </tr>
   </tbody>
 </table>
@@ -371,27 +360,13 @@
       <td>1</td>
       <td>JIT</td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>アレフネット</td>
-    </tr>
   </tbody>
 </table>
 
 <h2 id="セキュリティについて">セキュリティについて<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
 <p>すべてのAPIはSSL通信+Basic認証で行います。</p>
 
-<h2 id="20190320の会議での変更点について">2019/03/20の会議での変更点について<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#20190320%E3%81%AE%E4%BC%9A%E8%AD%B0%E3%81%A7%E3%81%AE%E5%A4%89%E6%9B%B4%E7%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
-
-<h3 id="2と3は同じapiにする">2と3は同じapiにする<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#2%E3%81%A83%E3%81%AF%E5%90%8C%E3%81%98api%E3%81%AB%E3%81%99%E3%82%8B" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-<p>2.電力使用量予測受信APIと3.電力使用量最新予測受信APIについてですが、送信するデータの構造がほぼ同一のため、こちらは同じAPIとしてまとめることにしました。</p>
-
-<h3 id="電力使用量予測受信apiのデータ構造を大幅に変更">電力使用量予測受信APIのデータ構造を大幅に変更<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1api%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E5%A4%89%E6%9B%B4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-<ul>
-  <li>上記に伴いAPIの仕様を大幅に変更しております。</li>
-</ul>
-
-<h3 id="5想定制御削減量の取得apiをpostメソッドに変更">5.想定制御削減量の取得APIをPOSTメソッドに変更<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#5%E6%83%B3%E5%AE%9A%E5%88%B6%E5%BE%A1%E5%89%8A%E6%B8%9B%E9%87%8F%E3%81%AE%E5%8F%96%E5%BE%97api%E3%82%92post%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<h3 id="2想定制御削減量の取得apiをpostメソッドに変更">5.想定制御削減量の取得APIをPOSTメソッドに変更<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#5%E6%83%B3%E5%AE%9A%E5%88%B6%E5%BE%A1%E5%89%8A%E6%B8%9B%E9%87%8F%E3%81%AE%E5%8F%96%E5%BE%97api%E3%82%92post%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
 <ul>
   <li>複数店舗を取得できるようにする都合上、GETからPOSTに変更</li>
 </ul>
