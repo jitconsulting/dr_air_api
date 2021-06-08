@@ -35,11 +35,11 @@
 
 <h1 id="api仕様書">API仕様書</h1>
 
-<h2 id="2電力使用量予測受信apipost">2.電力使用量予測受信API(POST)<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#2%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+<h2 id="1DR信号受信apipost">1.DR信号受信API(POST)<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#2%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
 
 <h3 id="url-1">URL<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#url-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
 
-<p>POST /v1/receive_electric_consumption_prediction</p>
+<p>POST /v1/receive_dr_signal</p>
 
 <h3 id="request-1">REQUEST<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#request-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
 
@@ -74,7 +74,7 @@
         </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分のDR信号の有無が入ります"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -93,7 +93,7 @@
           </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分のDR信号の有無が入ります"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
