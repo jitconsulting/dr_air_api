@@ -34,160 +34,6 @@
 <hr>
 
 <h1 id="api仕様書">API仕様書</h1>
-<h2 id="1制御レベル変更apipost">1.制御レベル変更API(POST)<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#1%E5%88%B6%E5%BE%A1%E3%83%AC%E3%83%99%E3%83%AB%E5%A4%89%E6%9B%B4apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
-
-<h3 id="url">URL<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#url" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-
-<p>POST /v1/change_control_level</p>
-
-<h3 id="request">REQUEST<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#request" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"occurrence_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30 00:30:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"server_company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0002"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0003"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACP-1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"is_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"air_conditioning_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="response">RESPONSE<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#response" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-
-<h4 id="ok">OK<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#ok" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-       </span><span class="p">}</span><span class="w">
-     </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0002"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-       </span><span class="p">},</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0002"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、制御レベルが変更できませんでした。"</span><span class="w">
-       </span><span class="p">},</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0003"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内部処理エラーのため、制御レベルが変更できませんでした。"</span><span class="w">
-       </span><span class="p">}</span><span class="w">
-     </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ST0003"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0001"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"リクエストタイムアウトのため、制御レベルが変更できませんでした。"</span><span class="w">
-       </span><span class="p">}</span><span class="w">
-     </span><span class="p">]</span><span class="w">
-   </span><span class="p">}</span><span class="w">
- </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h4 id="air_conditioning_levelの値">air_conditioning_levelの値<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#air_conditioning_level%E3%81%AE%E5%80%A4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>値</th>
-      <th>意味</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>off（空調制御を行わない）</td>
-    </tr>
-    <tr>
-      <td>1~30</td>
-      <td>弱</td>
-    </tr>
-    <tr>
-      <td>31~60</td>
-      <td>中</td>
-    </tr>
-    <tr>
-      <td>61~99</td>
-      <td>強</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="is_changeの値">is_changeの値<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#is_change%E3%81%AE%E5%80%A4" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>値</th>
-      <th>意味</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>変更なし</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>変更あり</td>
-    </tr>
-  </tbody>
-</table>
 
 <h2 id="2電力使用量予測受信apipost">2.電力使用量予測受信API(POST)<a class="anchorjs-link " href="https://jitconsulting.github.io/dr_air_api/#2%E9%9B%BB%E5%8A%9B%E4%BD%BF%E7%94%A8%E9%87%8F%E4%BA%88%E6%B8%AC%E5%8F%97%E4%BF%A1apipost" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
 
@@ -208,16 +54,12 @@
       </span><span class="nl">"demand_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
       </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"2018-11-30 00:00:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-       </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
+       </span><span class="s2">"00:00 - 23:30 までの48行分のDR信号の有無が入ります"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -227,13 +69,9 @@
       </span><span class="nl">"demand_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
       </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"2018-11-30 00:00:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"2019-03-08 00:30:00"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"power_consumption_amount_latest_prediction"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
           </span><span class="nl">"excess_status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
        </span><span class="s2">"00:00 - 23:30 までの48行分の電力消費量予測[kwh]と電力消費量最新予測[kwh]が入ります"</span><span class="w">
